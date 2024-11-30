@@ -28,7 +28,7 @@ export default function LocationAndAmenities() {
             ></iframe>
           </div>
           <p className="mt-4 text-center text-gray-600">
-            Ubicación: 35°02'22.9"S 58°28'38.4"W (-35.039682, -58.477336)
+            Ubicación: 35&deg;02&apos;22.9&quot;S 58&deg;28&apos;38.4&quot;W (-35.039682, -58.477336)
           </p>
         </div>
 

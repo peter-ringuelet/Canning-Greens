@@ -1,0 +1,20 @@
+{
+  "name": "Canning Greens",
+  "short_name": "CG",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#234400",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
+

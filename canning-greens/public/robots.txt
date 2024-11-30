@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://canning-greens.vercel.app/sitemap.xml
+

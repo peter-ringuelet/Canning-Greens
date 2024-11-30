@@ -30,31 +30,29 @@ export default function Header() {
 
   return (
     <header className="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm">
-      <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
+      <div className="max-w-[1400px] mx-auto px-4 lg:px-10">
         <div className="flex items-center justify-between h-20">
+          <Link href="/" className="flex-shrink-0">
+            <Image
+              src="/images/logo.png"
+              alt="Canning Greens Logo"
+              width={150}
+              height={50}
+              className="h-12 w-auto"
+            />
+          </Link>
+          <nav className="hidden md:flex items-center justify-center flex-1 space-x-8 mx-auto">
+            {menuItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="text-sm text-gray-600 hover:text-[#6A952F] whitespace-nowrap"
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
           <div className="flex items-center">
-            <Link href="/" className="flex-shrink-0">
-              <Image
-                src="/images/logo.png"
-                alt="Canning Greens Logo"
-                width={150}
-                height={50}
-                className="h-12 w-auto"
-              />
-            </Link>
-            <nav className="hidden md:flex items-center justify-center flex-1 space-x-6">
-              {menuItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="text-sm text-gray-600 hover:text-[#6A952F] whitespace-nowrap"
-                >
-                  {item.label}
-                </a>
-              ))}
-            </nav>
-          </div>
-          <div className="flex items-center ml-6">
             <a href="#contact" className="hidden md:block">
               <Button className="bg-[#234400] text-white hover:bg-[#6A952F] border-none hover:border-none focus:ring-0">
                 Agendar visita

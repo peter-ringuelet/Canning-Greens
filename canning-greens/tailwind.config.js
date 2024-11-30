@@ -74,13 +74,14 @@ module.exports = {
         sans: ['Ubuntu', 'sans-serif'],
       },
     },
-    screens: {
-      sm: "640px",
-      md: "1024px", 
-      lg: "1280px", 
-      xl: "1536px",
-      "2xl": "1920px", 
-    },
+      screens: {
+        sm: "640px", // Small screens (móviles pequeños)
+        md: "768px", // Medium screens (tablets)
+        lg: "1024px", // Large screens (laptops)
+        xl: "1280px", // Extra-large screens (desktops grandes)
+        "2xl": "1536px", // 2X extra-large screens (pantallas muy grandes)
+      },
+
   },
   plugins: [require("tailwindcss-animate")],
 }

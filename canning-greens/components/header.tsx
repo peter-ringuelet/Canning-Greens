@@ -32,70 +32,69 @@ export default function Header() {
     <header className="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-sm">
       <div className="max-w-[1400px] mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between h-20">
-          <div className="flex items-center h-full py-2">
-            <Link href="/" className="relative h-full aspect-[3/1] min-w-[180px]">
+          <div className="flex items-center">
+            <Link href="/" className="flex-shrink-0">
               <Image
                 src="/images/logo.png"
                 alt="Canning Greens Logo"
-                fill
-                className="object-contain object-left"
-                priority
+                width={120}
+                height={40}
+                className="h-10 w-auto"
               />
             </Link>
-          </div>
-          <nav className="hidden lg:flex justify-center flex-1">
-            <ul className="flex justify-center gap-8">
+            <nav className="hidden md:flex ml-6 space-x-4">
               {menuItems.map((item) => (
-                <li key={item.href}>
-                  <a href={item.href} className="text-gray-600 hover:text-[#6A952F] whitespace-nowrap text-sm">
-                    {item.label}
-                  </a>
-                </li>
+                <a
+                  key={item.href}
+                  href={item.href}
+                  className="text-sm text-gray-600 hover:text-[#6A952F] whitespace-nowrap"
+                >
+                  {item.label}
+                </a>
               ))}
-            </ul>
-          </nav>
-          <div className="hidden lg:block">
-            <a href="#contact">
+            </nav>
+          </div>
+          <div className="flex items-center">
+            <a href="#contact" className="hidden md:block">
               <Button className="bg-[#234400] text-white hover:bg-[#6A952F] border-none hover:border-none focus:ring-0">
                 Agendar visita
               </Button>
             </a>
-          </div>
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild>
-              <Button variant="outline" size="icon" className="lg:hidden" onClick={toggleMenu}>
-                <Menu className="h-6 w-6" />
-                <span className="sr-only">Abrir menú</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-white">
-              <SheetTitle className="text-left text-lg font-bold text-[#234400] mb-4">Menú de navegación</SheetTitle>
-              <nav className="flex flex-col space-y-4">
-                {menuItems.map((item) => (
-                  <SheetClose asChild key={item.href}>
-                    <a 
-                      href={item.href} 
-                      className="text-gray-600 hover:text-[#6A952F] py-2"
-                      onClick={closeMenu}
-                    >
-                      {item.label}
+            <Sheet open={isOpen} onOpenChange={setIsOpen}>
+              <SheetTrigger asChild>
+                <Button variant="outline" size="icon" className="md:hidden ml-4" onClick={toggleMenu}>
+                  <Menu className="h-6 w-6" />
+                  <span className="sr-only">Abrir menú</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-[300px] sm:w-[400px] bg-white">
+                <SheetTitle className="text-left text-lg font-bold text-[#234400] mb-4">Menú de navegación</SheetTitle>
+                <nav className="flex flex-col space-y-4">
+                  {menuItems.map((item) => (
+                    <SheetClose asChild key={item.href}>
+                      <a 
+                        href={item.href} 
+                        className="text-gray-600 hover:text-[#6A952F] py-2"
+                        onClick={closeMenu}
+                      >
+                        {item.label}
+                      </a>
+                    </SheetClose>
+                  ))}
+                  <SheetClose asChild>
+                    <a href="#contact" className="w-full block" onClick={closeMenu}>
+                      <Button className="w-full bg-[#234400] text-white hover:bg-[#6A952F] border-none hover:border-none focus:ring-0">
+                        Agendar visita
+                      </Button>
                     </a>
                   </SheetClose>
-                ))}
-                <SheetClose asChild>
-                  <a href="#contact" className="w-full block" onClick={closeMenu}>
-                    <Button className="w-full bg-[#234400] text-white hover:bg-[#6A952F] border-none hover:border-none focus:ring-0">
-                      Agendar visita
-                    </Button>
-                  </a>
-                </SheetClose>
-              </nav>
-            </SheetContent>
-          </Sheet>
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
         </div>
       </div>
     </header>
   )
 }
-
 

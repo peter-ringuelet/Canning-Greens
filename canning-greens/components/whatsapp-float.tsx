@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button"
 
 export default function WhatsAppFloat() {
   // Reemplaza este enlace con el enlace real de WhatsApp cuando lo tengas
-  const whatsappLink = "https://wa.me/NUMERODETELEFONO"
+  const whatsappLink = "https://wa.me/2214779209"
 
   return (
     <div className="fixed bottom-4 right-4 z-50 flex items-center space-x-2">

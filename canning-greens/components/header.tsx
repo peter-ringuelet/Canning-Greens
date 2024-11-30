@@ -37,12 +37,12 @@ export default function Header() {
               <Image
                 src="/images/logo.png"
                 alt="Canning Greens Logo"
-                width={120}
-                height={40}
-                className="h-10 w-auto"
+                width={150}
+                height={50}
+                className="h-12 w-auto"
               />
             </Link>
-            <nav className="hidden md:flex ml-6 space-x-4">
+            <nav className="hidden md:flex items-center justify-center flex-1 space-x-6">
               {menuItems.map((item) => (
                 <a
                   key={item.href}
@@ -54,7 +54,7 @@ export default function Header() {
               ))}
             </nav>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center ml-6">
             <a href="#contact" className="hidden md:block">
               <Button className="bg-[#234400] text-white hover:bg-[#6A952F] border-none hover:border-none focus:ring-0">
                 Agendar visita
@@ -97,4 +97,3 @@ export default function Header() {
     </header>
   )
 }
-

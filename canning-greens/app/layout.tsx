@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/images/logo.png', type: 'image/png' },
+      { url: '/images/logo-32x32.png', type: 'image/png' },
     ],
     apple: [
       { url: '/images/logo.png' },
@@ -49,12 +49,18 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
-        <link rel="icon" href="/images/logo.png" type="image/png" sizes="any" />
+        {/* Favicon en 32x32 */}
+        <link rel="icon" href="/images/logo-32x32.png" type="image/png" sizes="32x32" />
+
+        {/* Apple Touch Icon */}
         <link rel="apple-touch-icon" href="/images/logo.png" />
+
+        {/* Web Manifest */}
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body className="font-ubuntu">{children}</body>
     </html>
   )
 }
+
 

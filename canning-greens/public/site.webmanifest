@@ -1,18 +1,24 @@
 {
   "name": "Canning Greens",
   "short_name": "CG",
-  "icons": [
+    "icons": [
     {
-      "src": "/images/logo-192x192.png",
-      "sizes": "192x192",
-      "type": "image/png"
+        "src": "/images/logo-32x32.png",
+        "sizes": "32x32",
+        "type": "image/png"
     },
     {
-      "src": "/images/logo-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png"
+        "src": "/images/logo-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+    },
+    {
+        "src": "/images/logo-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
     }
-  ],
+    ]
+
   "theme_color": "#234400",
   "background_color": "#ffffff",
   "display": "standalone"

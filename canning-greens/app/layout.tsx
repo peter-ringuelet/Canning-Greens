@@ -1,21 +1,23 @@
 import './globals.css'
 import type { Metadata } from 'next'
+import { jsonLdScriptProps } from 'react-schemaorg'
+import { WebSite, Organization } from 'schema-dts'
 
 export const metadata: Metadata = {
-  title: 'Canning Greens | Desarrollo Exclusivo en Canning',
-  description: 'Descubre Canning Greens, un desarrollo residencial exclusivo en Canning que combina naturaleza, comodidad y diseño contemporáneo. Lotes unifamiliares en un entorno verde y seguro.',
-  keywords: 'Canning Greens, desarrollo inmobiliario, lotes unifamiliares, Canning, Buenos Aires, naturaleza, seguridad, amenities',
+  title: 'Canning Greens | Barrio Privado Exclusivo en Canning',
+  description: 'Canning Greens: barrio privado exclusivo en Canning. Lotes unifamiliares, espacios verdes y amenities de primer nivel. Descubre la vida en armonía con la naturaleza.',
+  keywords: 'Canning Greens, barrio privado, Canning, desarrollo inmobiliario, lotes unifamiliares, Buenos Aires, naturaleza, seguridad, amenities',
   openGraph: {
-    title: 'Canning Greens | Vivir en Armonía con la Naturaleza',
-    description: 'Desarrollo exclusivo en Canning con lotes unifamiliares, espacios verdes y amenities de primer nivel.',
+    title: 'Canning Greens | Barrio Privado en Armonía con la Naturaleza',
+    description: 'Canning Greens: barrio privado exclusivo en Canning con lotes unifamiliares, espacios verdes y amenities de primer nivel.',
     url: 'https://canning-greens.vercel.app',
     siteName: 'Canning Greens',
     images: [
       {
-        url: 'https://canning-greens.vercel.app/images/logo.png',
-        width: 800,
-        height: 600,
-        alt: 'Logo de Canning Greens',
+        url: 'https://canning-greens.vercel.app/images/canning-greens-aerial.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Vista aérea de Canning Greens',
       },
     ],
     locale: 'es_AR',
@@ -23,13 +25,20 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Canning Greens | Desarrollo Exclusivo en Canning',
-    description: 'Lotes unifamiliares en un entorno natural privilegiado. Descubre la vida en Canning Greens.',
-    images: ['https://canning-greens.vercel.app/images/logo.png'],
+    title: 'Canning Greens | Barrio Privado Exclusivo en Canning',
+    description: 'Descubre Canning Greens: barrio privado con lotes unifamiliares en un entorno natural privilegiado.',
+    images: ['https://canning-greens.vercel.app/images/canning-greens-aerial.jpg'],
   },
   icons: {
-    icon: '/images/logo.png',
-    apple: '/images/logo.png',
+    icon: [
+      { url: '/images/favicon.ico', sizes: 'any' },
+      { url: '/images/logo-192x192.png', type: 'image/png', sizes: '192x192' },
+      { url: '/images/logo-512x512.png', type: 'image/png', sizes: '512x512' },
+    ],
+    apple: [
+      { url: '/images/logo-192x192.png' },
+    ],
+    shortcut: ['/images/favicon.ico'],
   },
   manifest: '/site.webmanifest',
   alternates: {
@@ -45,9 +54,31 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
-        <link rel="icon" href="/images/logo.png" type="image/png" sizes="any" />
-        <link rel="apple-touch-icon" href="/images/logo.png" />
+        <link rel="icon" href="/images/favicon.ico" sizes="any" />
+        <link rel="icon" href="/images/logo-192x192.png" type="image/png" sizes="192x192" />
+        <link rel="icon" href="/images/logo-512x512.png" type="image/png" sizes="512x512" />
+        <link rel="apple-touch-icon" href="/images/logo-192x192.png" />
+        <link rel="shortcut icon" href="/images/favicon.ico" />
         <link rel="manifest" href="/site.webmanifest" />
+        <script
+          {...jsonLdScriptProps<WebSite>({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "Canning Greens",
+            url: "https://canning-greens.vercel.app",
+            description: "Canning Greens: barrio privado exclusivo en Canning con lotes unifamiliares y amenities de primer nivel."
+          })}
+        />
+        <script
+          {...jsonLdScriptProps<Organization>({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Canning Greens",
+            url: "https://canning-greens.vercel.app",
+            logo: "https://canning-greens.vercel.app/images/logo-192x192.png",
+            description: "Desarrollo de barrio privado exclusivo en Canning, Buenos Aires."
+          })}
+        />
       </head>
       <body className="font-ubuntu">{children}</body>
     </html>

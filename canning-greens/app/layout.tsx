@@ -51,6 +51,8 @@ export default function RootLayout({
       <head>
         {/* Favicon en 32x32 */}
         <link rel="icon" href="/images/logo-32x32.png" type="image/png" sizes="32x32" />
+        <meta name="google-site-verification" content="22xmkltQmgYCX9JdVc_b-q_P8f4KJcWUMwvciskhiLY" />
+
 
         {/* Apple Touch Icon */}
         <link rel="apple-touch-icon" href="/images/logo.png" />
